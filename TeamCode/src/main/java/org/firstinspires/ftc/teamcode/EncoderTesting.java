@@ -11,10 +11,10 @@ public class EncoderTesting extends LinearOpMode {
         DcMotor motor = hardwareMap.dcMotor.get("EncoderTester");
 
         // Reset the motor encoder so that it reads zero ticks
-        motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
+        //motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         // Turn the motor back on, required if you use STOP_AND_RESET_ENCODER
-        motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         waitForStart();
 
@@ -30,10 +30,11 @@ public class EncoderTesting extends LinearOpMode {
 
             // Show the position of the motor on telemetry
             telemetry.addData("Encoder Position", position);
+            telemetry.addData("CPR: ", motor.getMotorType().getTicksPerRev());
             //telemetry.addData("Encoder Revolutions", revolutions);
             //telemetry.addData("Encoder Angle (Degrees)", angle);
             //telemetry.addData("Encoder Angle - Normalized (Degrees)", angleNormalized);
-            //telemetry.update();
+            telemetry.update();
         }
     }
 }
