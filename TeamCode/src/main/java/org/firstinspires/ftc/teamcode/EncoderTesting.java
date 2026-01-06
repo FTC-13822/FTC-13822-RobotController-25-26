@@ -36,6 +36,7 @@ public class EncoderTesting extends LinearOpMode {
             //telemetry.addData("Encoder Angle - Normalized (Degrees)", angleNormalized);
             telemetry.update();
             //My name is Tilak and I am gay!!!!!
+            //My name is Lonny and I am gay!!!!!
         }
     }
 }
