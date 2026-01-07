@@ -29,8 +29,7 @@ public class RobovikesOpMode extends OpMode {
         //set both zero power behavior to instantly brake
         ShooterPower.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         ShooterPrecision.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        //set one motor to operate in reverse
-        ShooterPrecision.setDirection(DcMotorSimple.Direction.REVERSE);
+
 
 
     }
