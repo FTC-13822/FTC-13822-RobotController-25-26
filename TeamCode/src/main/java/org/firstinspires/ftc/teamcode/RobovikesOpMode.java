@@ -29,9 +29,11 @@ public class RobovikesOpMode extends OpMode {
         //set both zero power behavior to instantly brake
         ShooterPower.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         ShooterPrecision.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-
-
+        //and all the driving motors
+        BRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        FRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        BLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        FLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
     @Override
     public void loop() {
