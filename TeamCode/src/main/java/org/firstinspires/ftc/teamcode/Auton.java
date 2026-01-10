@@ -5,12 +5,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 @Autonomous
 public class Auton extends LinearOpMode {
-    private DcMotor BRM;
-    private DcMotor FRM;
-    private DcMotor BLM;
-    private DcMotor FLM;
+    DcMotor BRM;
+    DcMotor FRM;
+    DcMotor BLM;
+    DcMotor FLM;
 
-    private DcMotor Shooter;
+    DcMotor Shooter;
 
     @Override
     public void runOpMode(){
@@ -19,7 +19,7 @@ public class Auton extends LinearOpMode {
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
         Shooter = hardwareMap.get(DcMotor.class, ("Shooter"));
-        
+
     }
 
 }
