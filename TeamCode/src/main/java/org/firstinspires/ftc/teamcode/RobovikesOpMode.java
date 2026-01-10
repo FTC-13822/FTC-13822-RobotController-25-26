@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+
 //todo-when theres a ball the power will reduce a bit, detect when that happens and slow down the power
 @TeleOp
 public class RobovikesOpMode extends OpMode {
@@ -10,6 +12,8 @@ public class RobovikesOpMode extends OpMode {
     private DcMotor FRM;
     private DcMotor BLM;
     private DcMotor FLM;
+    private DcMotor ShooterPrecision;
+    private DcMotor ShooterPower;
 
 
     @Override
@@ -19,8 +23,17 @@ public class RobovikesOpMode extends OpMode {
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
-
-
+        //initialize both motors
+        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter_Precision"));
+        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter_Power"));
+        //set both zero power behavior to instantly brake
+        ShooterPower.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        ShooterPrecision.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //and all the driving motors
+        BRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        FRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        BLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        FLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
     @Override
     public void loop() {
@@ -88,7 +101,14 @@ public class RobovikesOpMode extends OpMode {
         telemetry.addData("FRM", FRM.getPower());
         telemetry.addData("BRM", BRM.getPower());
         telemetry.update();
-
+        // simple program logic for motor and button
+        if (gamepad1.cross){
+            ShooterPrecision.setPower(1.0);
+            ShooterPower.setPower(1.0);
+        } else {
+            ShooterPrecision.setPower(0.0);
+            ShooterPower.setPower(0.0);
+        }
     }
 }
 
