@@ -75,6 +75,7 @@ public class EncoderTesting extends LinearOpMode {
             telemetry.addData("Distance: ", distance);
             telemetry.update();
             //ianbum
+            //parsaisthatguy
         }
     }
 }
