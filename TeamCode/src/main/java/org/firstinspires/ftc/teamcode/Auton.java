@@ -20,6 +20,6 @@ public class Auton extends LinearOpMode {
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
         Shooter = hardwareMap.get(DcMotor.class, ("Shooter"));
 
-    }
 
+    }
 }
