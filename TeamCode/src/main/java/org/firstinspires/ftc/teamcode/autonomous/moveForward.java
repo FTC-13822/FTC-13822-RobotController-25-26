@@ -1,63 +1,42 @@
 package org.firstinspires.ftc.teamcode.autonomous;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class moveForward extends OpMode {
+public class moveForward extends LinearOpMode {
     public DcMotor BRM;
     public DcMotor BLM;
     public DcMotor FRM;
     public DcMotor FLM;
+    ElapsedTime runtime = new ElapsedTime();
 
     @Override
-    public void init(){
+    public void runOpMode(){
         BRM = hardwareMap.get(DcMotor.class, "BRM");
         BLM = hardwareMap.get(DcMotor.class, "BLM");
         FRM = hardwareMap.get(DcMotor.class, "FRM");
         FLM = hardwareMap.get(DcMotor.class, "FLM");
-
-
-        BRM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        // Reset the motor encoder so that it reads zero ticks
-        BLM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        // Reset the motor encoder so that it reads zero ticks
-        FRM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        // Reset the motor encoder so that it reads zero ticks
-        FLM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        // Reset the motor encoder so that it reads zero ticks
-        //motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        // Turn the motor back on, required if you use STOP_AND_RESET_ENCODER
-        BRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        FRM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        BLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        FLM.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-
     }
-    @Override
-    public void loop(){
+    
+        //out ~2ft then strafe left - red
+        //out ~2ft then strafe right - blue
 
-    }
+    public void forward(double power, double time){
+        BRM.setPower(power);
+        FRM.setPower(power);
+        BLM.setPower(power);
+        FLM.setPower(power);
+        runtime.reset();
 
-    public void encoderDrive(double speed, double distance){
-        int position = BRM.getCurrentPosition();
-         double CPR = 384.5;
-        double revolutions = position/CPR;
-
-        double angle = revolutions * 360;
-        double angleNormalized = angle % 360;
-        double circumference  = Math.PI*96;
-        BLM.setTargetPosition(-(int)((distance/circumference)*CPR));
-        FLM.setTargetPosition(-(int)((distance/circumference)*CPR));
-        BRM.setTargetPosition((int)((distance/circumference)*CPR));
-        FRM.setTargetPosition((int)((distance/circumference)*CPR));
-        BLM.setPower(Math.abs(speed));
-        BRM.setPower(Math.abs(speed));
-        FLM.setPower(Math.abs(speed));
-        FRM.setPower(Math.abs(speed));
-        BLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        FLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        FRM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        BRM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        while(opModeIsActive() && (runtime.seconds() < time)){
+            telemetry.addData("Status", "Driving Forward");
+            telemetry.addData("Elapsed Time", runtime.seconds());
+            telemetry.update();
+        }
+        BRM.setPower(0);
+        FRM.setPower(0);
+        BLM.setPower(0);
+        FLM.setPower(0);
     }
 }
