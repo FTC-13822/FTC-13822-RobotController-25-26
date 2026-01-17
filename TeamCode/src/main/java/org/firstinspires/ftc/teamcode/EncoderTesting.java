@@ -51,10 +51,6 @@ public class EncoderTesting extends LinearOpMode {
 
 
 
-            // Show the position of the motor on telemetry
-
-            //ian code kl;'lk;lk;nlmknmlkj;l
-
             if(distance>-500){
                 BLM.setPower(-0.5);
                 FLM.setPower(-0.5);
@@ -74,7 +70,6 @@ public class EncoderTesting extends LinearOpMode {
             telemetry.addData("Encoder Angle - Normalized (Degrees)", angleNormalized);
             telemetry.addData("Distance: ", distance);
             telemetry.update();
-            //parsaisthatguy
         }
     }
 }
