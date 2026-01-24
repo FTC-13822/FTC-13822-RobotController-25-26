@@ -1,9 +1,10 @@
 package org.firstinspires.ftc.teamcode.autonomous;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
-
+@Autonomous
 public class autonRed extends OpMode {
     //left back 1 front -1
     //out ~2ft then strafe left - red
@@ -13,7 +14,7 @@ public class autonRed extends OpMode {
     DcMotor FLM;
     DcMotor ShooterPrecision;
     DcMotor ShooterPower;
-    Forward moveF = new Forward();
+    Forward moveF;
     ElapsedTime runtime = new ElapsedTime();
     public void init(){
 
@@ -22,11 +23,9 @@ public class autonRed extends OpMode {
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
         //initialize both motors
-        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
-        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
-        moveF.moveF(100);
+        moveF = new Forward();
     }
     public void loop(){
-
+        moveF.moveF(305);
     }
 }
