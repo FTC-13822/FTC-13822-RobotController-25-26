@@ -34,8 +34,8 @@ public class RobovikesOpMode extends OpMode {
     @Override
     public void loop() {
         //boolean brake = false;
-        double leftPower = gamepad1.left_stick_y;
-        double rightPower = gamepad1.right_stick_y;
+        double rightPower = gamepad1.left_stick_y;
+        double leftPower = gamepad1.right_stick_y;
         float lTrig = gamepad1.left_trigger;
         float rTrig = gamepad1.right_trigger;
         leftPower  = -Math.max(-1, Math.min(1, leftPower));
