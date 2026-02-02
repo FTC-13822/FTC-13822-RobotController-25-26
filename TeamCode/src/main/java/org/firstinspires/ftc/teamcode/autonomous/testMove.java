@@ -9,6 +9,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class testMove extends OpMode {
     boolean end = false;
     Forward forward;
+    left moveLeft;
+    right moveRight;
     DcMotor BRM;
     DcMotor FRM;
     DcMotor BLM;
@@ -22,12 +24,17 @@ public class testMove extends OpMode {
     @Override
     public void init(){
          forward = new Forward(hardwareMap);
+         moveLeft = new left(hardwareMap);
+         moveRight = new  right(hardwareMap);
+
     }
 
     @Override
     public void loop(){
         if(end == false) {
             forward.moveF(1000);
+            moveLeft.turnLeft(360);
+            moveRight.turnRight(360);
         }
         end = true;
     }
