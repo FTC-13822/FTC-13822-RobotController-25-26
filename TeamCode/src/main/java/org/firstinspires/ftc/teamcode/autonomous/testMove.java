@@ -7,32 +7,28 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp
 public class testMove extends OpMode {
-    Forward forward = new Forward();
-    private DcMotor BRM;
-    private DcMotor FRM;
-    private DcMotor BLM;
-    private DcMotor FLM;
-    private DcMotor ShooterPrecision;
-    private DcMotor ShooterPower;
+    boolean end = false;
+    Forward forward;
+    DcMotor BRM;
+    DcMotor FRM;
+    DcMotor BLM;
+    DcMotor FLM;
+    //initialize both motors
+    DcMotor ShooterPrecision;
+    DcMotor ShooterPower;
     private CRServo Servo1;
     private CRServo Servo3;
 
     @Override
     public void init(){
-        Servo1 = hardwareMap.get(CRServo.class, ("Servo1"));
-        Servo3 = hardwareMap.get(CRServo.class, ("Servo3"));
-
-        BRM = hardwareMap.get(DcMotor.class, ("BRM"));
-        FRM = hardwareMap.get(DcMotor.class, ("FRM"));
-        BLM = hardwareMap.get(DcMotor.class, ("BLM"));
-        FLM = hardwareMap.get(DcMotor.class, ("FLM"));
-        //initialize both motors
-        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
-        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
+         forward = new Forward(hardwareMap);
     }
 
     @Override
     public void loop(){
-        forward.moveF(300);
+        if(end == false) {
+            forward.moveF(1000);
+        }
+        end = true;
     }
 }

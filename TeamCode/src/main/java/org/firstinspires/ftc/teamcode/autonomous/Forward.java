@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
 public class Forward extends OpMode {
@@ -8,24 +9,27 @@ public class Forward extends OpMode {
     public DcMotor FRM;
     public DcMotor FLM;
     public DcMotor BRM;
+    public DcMotor ShooterPrecision;
+    public DcMotor ShooterPower;
 
-/*
-    public Forward() {
+    public Forward(HardwareMap hardwareMap) {
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
-        BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
+        BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
+        //initialize both motors
+        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
+        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
     }
-    */
     @Override
     public void init(){
-
     }
     @Override
     public void loop(){
 
     }
     public void moveF(int distance){
+
         BRM.setTargetPosition(distance);
         FRM.setTargetPosition(distance);
         BLM.setTargetPosition(-distance);
