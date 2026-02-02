@@ -1,28 +1,31 @@
 package org.firstinspires.ftc.teamcode.autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 
-public class Forward extends LinearOpMode{
+public class Forward extends OpMode {
     public DcMotor BLM;
     public DcMotor FRM;
     public DcMotor FLM;
     public DcMotor BRM;
 
-
+/*
     public Forward() {
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
     }
+    */
     @Override
-    public void runOpMode(){
+    public void init(){
+
+    }
+    @Override
+    public void loop(){
 
     }
     public void moveF(int distance){
-
         BRM.setTargetPosition(distance);
         FRM.setTargetPosition(distance);
         BLM.setTargetPosition(-distance);
@@ -57,8 +60,15 @@ public class Forward extends LinearOpMode{
         }
         while (power > .25){
             power -= .05;
+            FRM.setPower(power);
+            FLM.setPower(-power);
+            BRM.setPower(power);
+            BLM.setPower(-power);
         }
+        power = 0;
+        FRM.setPower(power);
+        FLM.setPower(-power);
+        BRM.setPower(power);
+        BLM.setPower(-power);
     }
-
-
 }
