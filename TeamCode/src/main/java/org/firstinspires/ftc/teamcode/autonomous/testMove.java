@@ -11,6 +11,8 @@ public class testMove extends OpMode {
     Forward forward;
     left moveLeft;
     right moveRight;
+    Shooting shot;
+    Intake intake;
     DcMotor BRM;
     DcMotor FRM;
     DcMotor BLM;
@@ -26,6 +28,8 @@ public class testMove extends OpMode {
          forward = new Forward(hardwareMap);
          moveLeft = new left(hardwareMap);
          moveRight = new  right(hardwareMap);
+         shot = new Shooting(hardwareMap);
+         intake = new Intake(hardwareMap);
 
     }
 
@@ -35,6 +39,8 @@ public class testMove extends OpMode {
             forward.moveF(1000);
             moveLeft.turnLeft(360);
             moveRight.turnRight(360);
+            intake.takein(10);
+            shot.outtake(3);
         }
         end = true;
     }
