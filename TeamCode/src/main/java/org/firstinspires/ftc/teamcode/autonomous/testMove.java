@@ -4,10 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @TeleOp
 public class testMove extends OpMode {
     boolean end = false;
+    Back back;
     Forward forward;
     left moveLeft;
     right moveRight;
@@ -30,13 +32,14 @@ public class testMove extends OpMode {
          moveRight = new  right(hardwareMap);
          shot = new Shooting(hardwareMap);
          intake = new Intake(hardwareMap);
-
+         back = new Back(hardwareMap);
     }
 
     @Override
     public void loop(){
         if(end == false) {
             forward.moveF(1000);
+
             moveLeft.turnLeft(360);
             moveRight.turnRight(360);
             intake.takein(10);
