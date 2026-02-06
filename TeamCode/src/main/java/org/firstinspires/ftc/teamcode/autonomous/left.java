@@ -16,9 +16,6 @@ public class left extends OpMode {
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
-        //initialize both motors
-        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
-        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
     }
     @Override
     public void init(){

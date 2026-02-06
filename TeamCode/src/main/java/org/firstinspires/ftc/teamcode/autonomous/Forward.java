@@ -18,8 +18,6 @@ public class Forward extends OpMode {
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
         //initialize both motors
-        ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
-        ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
     }
     @Override
     public void init(){
@@ -50,17 +48,16 @@ public class Forward extends OpMode {
         double distanceMoved = revolutions *circumference;
         double power = FRM.getPower();
         //acceleration
-        boolean end = true;
-        while (distanceMoved < distance && power < 0.75 && end) {
-            power +=0.05;
+
+        while (distanceMoved < distance-200) {
+            if(power < .75) {
+                power += 0.05;
+            }
             FRM.setPower(power);
             FLM.setPower(-power);
             BRM.setPower(power);
             BLM.setPower(-power);
-            //deceleration
-            if(distance - FRM.getCurrentPosition()/CPR * circumference < 100){
-                end = false;
-            }
+
         }
         while (power > .25){
             power -= .05;

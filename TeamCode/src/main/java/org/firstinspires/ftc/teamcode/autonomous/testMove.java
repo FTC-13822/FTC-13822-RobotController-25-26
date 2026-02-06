@@ -30,20 +30,20 @@ public class testMove extends OpMode {
          forward = new Forward(hardwareMap);
          moveLeft = new left(hardwareMap);
          moveRight = new  right(hardwareMap);
-         shot = new Shooting(hardwareMap);
-         intake = new Intake(hardwareMap);
+         //shot = new Shooting(hardwareMap);
+         //intake = new Intake(hardwareMap);
          back = new Back(hardwareMap);
     }
 
     @Override
     public void loop(){
         if(end == false) {
-            forward.moveF(1000);
-
-            moveLeft.turnLeft(360);
-            moveRight.turnRight(360);
-            intake.takein(10);
-            shot.outtake(3);
+            forward.moveF(10000);
+            back.moveB(10000);
+            moveLeft.turnLeft(3600);
+            moveRight.turnRight(3600);
+            //intake.takein(10);
+            //shot.outtake(3);
         }
         end = true;
     }
