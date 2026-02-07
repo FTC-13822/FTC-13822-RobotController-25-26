@@ -71,7 +71,7 @@ public class RobovikesOpMode extends OpMode {
         telemetry.update();
         // simple program logic for motor and button
         if (gamepad1.cross){
-            ShooterPrecision.setPower(.6);
+            ShooterPrecision.setPower(.8);
             ShooterPower.setPower(.8);
         } else {
             ShooterPrecision.setPower(0.0);
