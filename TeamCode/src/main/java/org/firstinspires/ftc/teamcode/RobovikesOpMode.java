@@ -101,6 +101,17 @@ public class RobovikesOpMode extends OpMode {
             ShooterPower.setPower(0);
             ShooterPrecision.setPower(0);
         }
+        if(gamepad1.y) {
+            Servo1.setPower(.3);
+            Servo3.setPower(.3);
+            ShooterPower.setPower(1);
+            ShooterPrecision.setPower(1);
+        }else{
+            Servo1.setPower(0);
+            Servo3.setPower(0);
+            ShooterPower.setPower(0);
+            ShooterPrecision.setPower(0);
+        }
     }
 }
 
