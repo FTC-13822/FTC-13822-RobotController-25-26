@@ -25,7 +25,7 @@ public class Forward extends OpMode {
     public void loop(){
 
     }
-    public void moveF(int distance){
+    public void moveF(int distance) {
 
         BRM.setTargetPosition(distance);
         FRM.setTargetPosition(distance);
@@ -39,15 +39,15 @@ public class Forward extends OpMode {
         BLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         FLM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         FLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        double CPR  = 384.5;
+        double CPR = 384.5;
         double diameter = 96;
-        double circumference = Math.PI*diameter;
+        double circumference = Math.PI * diameter;
         double position = FRM.getCurrentPosition();
-        double revolutions = position/CPR;
-        double distanceMoved = revolutions *circumference;
-        double power = FRM.getPower();
+        double revolutions = position / CPR;
+        double distanceMoved = revolutions * circumference;
+        double power = .3;
         //acceleration
-
+        /*
         while (distanceMoved < distance-200) {
             if(power < .75) {
                 power += 0.05;
@@ -65,7 +65,9 @@ public class Forward extends OpMode {
             BRM.setPower(power);
             BLM.setPower(-power);
         }
-        power = 0;
+
+         */
+
         FRM.setPower(power);
         FLM.setPower(-power);
         BRM.setPower(power);
