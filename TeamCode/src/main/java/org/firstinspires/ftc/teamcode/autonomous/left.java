@@ -29,7 +29,7 @@ public class left extends OpMode {
     }
     public void turnLeft(int degrees){
         double CPR = 384.5;
-        BRM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        BRM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); //Bro this sets it to zero already you dont need + current position +
         BLM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         FRM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         FLM.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -39,7 +39,7 @@ public class left extends OpMode {
         FRM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         FLM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        int newBlmTarget = BLM.getCurrentPosition() + (int) (degrees * -385.4);
+        int newBlmTarget = BLM.getCurrentPosition() + (int) (degrees * -385.4);//these tprs are wrong
         BLM.setTargetPosition(newBlmTarget);
         int newFrmTarget = FRM.getCurrentPosition() + (int) (degrees * 385.4);
         FRM.setTargetPosition(newFrmTarget);

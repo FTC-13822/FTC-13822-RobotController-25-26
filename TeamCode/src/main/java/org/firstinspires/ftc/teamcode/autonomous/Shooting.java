@@ -22,7 +22,7 @@ public class Shooting extends OpMode {
         //initialize both motors
         ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
         ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
-        ElapsedTime runTime = new ElapsedTime();
+        runTime = new ElapsedTime();
     }
     @Override
     public void init(){

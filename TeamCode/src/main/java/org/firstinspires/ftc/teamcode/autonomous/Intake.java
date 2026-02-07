@@ -16,7 +16,7 @@ public class Intake extends OpMode {
         Servo1 = hardwareMap.get(CRServo.class,"Servo1");
         Servo2 = hardwareMap.get(CRServo.class,"Servo2");
         Servo3 = hardwareMap.get(CRServo.class,"Servo3");
-        ElapsedTime runTime = new ElapsedTime();
+        runTime = new ElapsedTime();
     }
     @Override
     public void init(){
