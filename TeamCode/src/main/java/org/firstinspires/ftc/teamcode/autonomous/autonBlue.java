@@ -38,12 +38,16 @@ public class autonBlue extends OpMode {
     @Override
     public void loop(){
         if(end == false) {
+            back.moveB(2000);
+            shot.outtake(3);
+            /*
             forward.moveF(1000);
             back.moveB(1000);
             moveLeft.turnLeft(360);
             moveRight.turnRight(360);
             intake.takein(10);
             shot.outtake(3);
+             */
         }
         end = true;
     }

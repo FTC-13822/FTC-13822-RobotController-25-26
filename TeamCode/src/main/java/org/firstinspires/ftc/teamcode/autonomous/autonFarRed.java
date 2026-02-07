@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 @Autonomous
-public class autonRed extends OpMode {
+public class autonFarRed extends OpMode {
     boolean end = false;
     Back back;
     Forward forward;
@@ -34,10 +34,11 @@ public class autonRed extends OpMode {
     }
     public void loop() {
         if (end == false) {
-            back.moveB(2000);
+            forward.moveF(2500);
+            moveRight.turnRight(65);
             shot.outtake(3);
-            }
         }
     }
+}
 
 
