@@ -15,14 +15,15 @@ public class RobovikesOpMode extends OpMode {
     private DcMotor ShooterPrecision;
     private DcMotor ShooterPower;
     private CRServo Servo1;
+    private CRServo Servo2;
     private CRServo Servo3;
 
 
     @Override
     public void init() {
         Servo1 = hardwareMap.get(CRServo.class, ("Servo1"));
-        Servo3 = hardwareMap.get(CRServo.class, ("Servo2"));
-
+        Servo2 = hardwareMap.get(CRServo.class, ("Servo2"));
+        Servo3 = hardwareMap.get(CRServo.class, "Servo3");
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
@@ -80,34 +81,41 @@ public class RobovikesOpMode extends OpMode {
         //intake
         if(gamepad1.left_bumper){
             Servo1.setPower(1);
+            Servo2.setPower(1);
             Servo3.setPower(1);
 
         }else if(gamepad1.right_bumper){
             Servo1.setPower(-1);
+            Servo2.setPower(-1);
             Servo3.setPower(-1);
         }else{
             Servo1.setPower(0);
+            Servo2.setPower(0);
             Servo3.setPower(0);
         }
         //long shot
         if(gamepad1.x) {
             Servo1.setPower(1);
+            Servo2.setPower(1);
             Servo3.setPower(1);
             ShooterPower.setPower(1);
             ShooterPrecision.setPower(1);
         }else{
             Servo1.setPower(0);
+            Servo2.setPower(0);
             Servo3.setPower(0);
             ShooterPower.setPower(0);
             ShooterPrecision.setPower(0);
         }
         if(gamepad1.y) {
             Servo1.setPower(.3);
+            Servo2.setPower(.3);
             Servo3.setPower(.3);
             ShooterPower.setPower(1);
             ShooterPrecision.setPower(1);
         }else{
             Servo1.setPower(0);
+            Servo2.setPower(0);
             Servo3.setPower(0);
             ShooterPower.setPower(0);
             ShooterPrecision.setPower(0);

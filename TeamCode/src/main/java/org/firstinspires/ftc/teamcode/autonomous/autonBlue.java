@@ -23,6 +23,7 @@ public class autonBlue extends OpMode {
     DcMotor ShooterPrecision;
     DcMotor ShooterPower;
     private CRServo Servo1;
+    private CRServo Servo2;
     private CRServo Servo3;
 
     @Override
