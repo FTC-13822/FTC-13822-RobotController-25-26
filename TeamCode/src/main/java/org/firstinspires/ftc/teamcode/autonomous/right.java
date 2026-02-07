@@ -39,13 +39,13 @@ public class right extends OpMode {
         FRM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         FLM.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        int newBlmTarget = BLM.getCurrentPosition() + (int) (degrees * 385.4);//these tprs are wrong
+        int newBlmTarget = BLM.getCurrentPosition() + (int) (degrees/360.0 * 385.4);//these tprs are wrong
         BLM.setTargetPosition(newBlmTarget);
-        int newFrmTarget = FRM.getCurrentPosition() + (int) (degrees * -385.4);
+        int newFrmTarget = FRM.getCurrentPosition() + (int) (degrees/360.0 * -385.4);
         FRM.setTargetPosition(newFrmTarget);
-        int newFlmTarget = FLM.getCurrentPosition() + (int) (degrees * 385.4);
+        int newFlmTarget = FLM.getCurrentPosition() + (int) (degrees/360.0 * 385.4);
         FLM.setTargetPosition(newFlmTarget);
-        int newBrmTarget = BRM.getCurrentPosition() + (int) (degrees * -385.4);
+        int newBrmTarget = BRM.getCurrentPosition() + (int) (degrees/360.0 * -385.4);
         BRM.setTargetPosition(newBrmTarget);
 
         BRM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
