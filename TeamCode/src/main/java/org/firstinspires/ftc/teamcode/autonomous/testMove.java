@@ -38,12 +38,12 @@ public class testMove extends OpMode {
     @Override
     public void loop(){
         if(end == false) {
-            forward.moveF(1000);
-            back.moveB(1000);
+            //forward.moveF(1100);
+            //back.moveB(1000);
             moveLeft.turnLeft(360);
             moveRight.turnRight(360);
-            intake.takein(10);
-            shot.outtake(3);
+            //intake.takein(10);
+            //shot.outtake(3);
         }
         end = true;
     }

@@ -52,5 +52,9 @@ public class left extends OpMode {
         BLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         FRM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         FLM.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BRM.setPower(.3);
+        BLM.setPower(-.3);
+        FRM.setPower(.3);
+        FLM.setPower(-.3);
     }
 }
