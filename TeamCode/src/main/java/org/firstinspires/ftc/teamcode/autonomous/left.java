@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class left extends OpMode {
@@ -18,10 +19,10 @@ public class left extends OpMode {
     }
     @Override
     public void init(){
-        BLM.setDirection(DcMotor.Direction.FORWARD);
-        FLM.setDirection(DcMotor.Direction.FORWARD);
-        BRM.setDirection(DcMotor.Direction.REVERSE);
-        FRM.setDirection(DcMotor.Direction.REVERSE);
+        BLM.setDirection(DcMotor.Direction.REVERSE);
+        FLM.setDirection(DcMotor.Direction.REVERSE);
+        BRM.setDirection(DcMotor.Direction.FORWARD);
+        FRM.setDirection(DcMotor.Direction.FORWARD);
     }
     @Override
     public void loop(){

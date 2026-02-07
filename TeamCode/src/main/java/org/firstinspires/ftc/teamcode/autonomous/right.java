@@ -19,10 +19,10 @@ public class right extends OpMode {
     }
     @Override
     public void init(){
-        BLM.setDirection(DcMotor.Direction.REVERSE);
-        FLM.setDirection(DcMotor.Direction.REVERSE);
-        BRM.setDirection(DcMotor.Direction.FORWARD);
-        FRM.setDirection(DcMotor.Direction.FORWARD);
+        BLM.setDirection(DcMotor.Direction.FORWARD);
+        FLM.setDirection(DcMotor.Direction.FORWARD);
+        BRM.setDirection(DcMotor.Direction.REVERSE);
+        FRM.setDirection(DcMotor.Direction.REVERSE);
     }
     @Override
     public void loop(){
