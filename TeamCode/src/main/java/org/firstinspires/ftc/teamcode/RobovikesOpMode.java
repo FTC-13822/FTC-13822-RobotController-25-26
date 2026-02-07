@@ -82,6 +82,9 @@ public class RobovikesOpMode extends OpMode {
             Servo1.setPower(1);
             Servo3.setPower(1);
 
+        }else if(gamepad1.right_bumper){
+            Servo1.setPower(-1);
+            Servo3.setPower(-1);
         }else{
             Servo1.setPower(0);
             Servo3.setPower(0);
