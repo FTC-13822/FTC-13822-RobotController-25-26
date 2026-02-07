@@ -21,7 +21,7 @@ public class RobovikesOpMode extends OpMode {
     @Override
     public void init() {
         Servo1 = hardwareMap.get(CRServo.class, ("Servo1"));
-        Servo3 = hardwareMap.get(CRServo.class, ("Servo3"));
+        Servo3 = hardwareMap.get(CRServo.class, ("Servo2"));
 
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));

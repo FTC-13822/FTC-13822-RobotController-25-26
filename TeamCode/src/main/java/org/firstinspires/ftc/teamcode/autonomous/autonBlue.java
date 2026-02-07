@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @TeleOp
-public class testMove extends OpMode {
+public class autonBlue extends OpMode {
     boolean end = false;
     Back back;
     Forward forward;
@@ -27,12 +27,12 @@ public class testMove extends OpMode {
 
     @Override
     public void init(){
-         forward = new Forward(hardwareMap);
-         moveLeft = new left(hardwareMap);
-         moveRight = new  right(hardwareMap);
-         shot = new Shooting(hardwareMap);
-         intake = new Intake(hardwareMap);
-         back = new Back(hardwareMap);
+        forward = new Forward(hardwareMap);
+        moveLeft = new left(hardwareMap);
+        moveRight = new  right(hardwareMap);
+        shot = new Shooting(hardwareMap);
+        intake = new Intake(hardwareMap);
+        back = new Back(hardwareMap);
     }
 
     @Override
