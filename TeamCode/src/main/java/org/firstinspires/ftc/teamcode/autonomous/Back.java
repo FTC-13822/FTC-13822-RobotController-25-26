@@ -46,29 +46,13 @@ public class Back extends OpMode {
         double position = FRM.getCurrentPosition();
         double revolutions = position/CPR;
         double distanceMoved = revolutions *circumference;
-        double power = FRM.getPower();
-        //acceleration
-        boolean end = true;
-        while (distanceMoved < distance-200) {
-            if(power < .75){
-            power +=0.05;
-            }
+        double power = .3;
+
+
             FRM.setPower(power);
             FLM.setPower(-power);
             BRM.setPower(power);
             BLM.setPower(-power);
-        }
-        while (power > .25){
-            power -= .05;
-            FRM.setPower(power);
-            FLM.setPower(-power);
-            BRM.setPower(power);
-            BLM.setPower(-power);
-        }
-        power = 0;
-        FRM.setPower(power);
-        FLM.setPower(-power);
-        BRM.setPower(power);
-        BLM.setPower(-power);
+
     }
 }
