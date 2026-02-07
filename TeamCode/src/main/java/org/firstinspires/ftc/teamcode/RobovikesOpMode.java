@@ -73,36 +73,27 @@ public class RobovikesOpMode extends OpMode {
         if (gamepad1.cross){
             ShooterPrecision.setPower(.8);
             ShooterPower.setPower(.8);
-        } else {
-            ShooterPrecision.setPower(0.0);
-            ShooterPower.setPower(0.0);
+            Servo1.setPower(1);
+            Servo3.setPower(1);
         }
         //intake
-        if(gamepad1.left_bumper){
+        else if(gamepad1.left_bumper){
             Servo1.setPower(1);
             Servo3.setPower(1);
 
         }else if(gamepad1.right_bumper){
             Servo1.setPower(-1);
             Servo3.setPower(-1);
-        }else{
-            Servo1.setPower(0);
-            Servo3.setPower(0);
         }
         //long shot
-        if(gamepad1.x) {
+        else if(gamepad1.x) {
             Servo1.setPower(1);
             Servo3.setPower(1);
             ShooterPower.setPower(1);
             ShooterPrecision.setPower(1);
-        }else{
-            Servo1.setPower(0);
-            Servo3.setPower(0);
-            ShooterPower.setPower(0);
-            ShooterPrecision.setPower(0);
         }
         //short
-        if(gamepad1.y) {
+        else if(gamepad1.y) {
             Servo1.setPower(1);
             Servo3.setPower(1);
             ShooterPower.setPower(.3);
