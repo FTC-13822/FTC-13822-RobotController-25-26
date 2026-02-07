@@ -14,7 +14,6 @@ public class Shooting extends OpMode {
     Intake intake;
     public CRServo Servo1;
     public CRServo Servo2;
-    public CRServo Servo3;
 
     public Shooting(HardwareMap hardwareMap) {
 
@@ -22,7 +21,6 @@ public class Shooting extends OpMode {
         ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
         Servo1 = hardwareMap.get(CRServo.class,"Servo1");
         Servo2 = hardwareMap.get(CRServo.class,"Servo2");
-        Servo3 = hardwareMap.get(CRServo.class, "Servo3");
         runTime = new ElapsedTime();
         intake = new Intake(hardwareMap);
     }
@@ -38,7 +36,6 @@ public class Shooting extends OpMode {
         while (runTime.seconds()<time){
             Servo1.setPower(1);
             Servo2.setPower(1);
-            Servo3.setPower(1);
             ShooterPower.setPower(1);
             ShooterPrecision.setPower(1);
 
@@ -47,6 +44,5 @@ public class Shooting extends OpMode {
         ShooterPrecision.setPower(0);
         Servo1.setPower(0);
         Servo2.setPower(0);
-        Servo3.setPower(0);
     }
 }
