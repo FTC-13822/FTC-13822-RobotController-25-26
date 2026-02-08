@@ -9,15 +9,14 @@ public class Forward extends OpMode {
     public DcMotor FRM;
     public DcMotor FLM;
     public DcMotor BRM;
-    public DcMotor ShooterPrecision;
-    public DcMotor ShooterPower;
+
 
     public Forward(HardwareMap hardwareMap) {
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));
         BLM = hardwareMap.get(DcMotor.class, ("BLM"));
         FLM = hardwareMap.get(DcMotor.class, ("FLM"));
-        //initialize both motors
+
     }
     @Override
     public void init(){

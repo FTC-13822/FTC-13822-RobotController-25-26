@@ -9,13 +9,13 @@ public class Intake extends OpMode {
 
     public CRServo Servo1;
     public CRServo Servo2;
-    public CRServo Servo3;
+
     public ElapsedTime runTime;
 
     public Intake(HardwareMap hardwareMap) {
         Servo1 = hardwareMap.get(CRServo.class,"Servo1");
         Servo2 = hardwareMap.get(CRServo.class,"Servo2");
-        Servo3 = hardwareMap.get(CRServo.class,"Servo3");
+
         runTime = new ElapsedTime();
     }
     @Override
@@ -30,10 +30,10 @@ public class Intake extends OpMode {
         while(runTime.seconds()<time) {
             Servo1.setPower(1);
             Servo2.setPower(1);
-            Servo3.setPower(1);
+
         }
         Servo1.setPower(0);
         Servo2.setPower(0);
-        Servo3.setPower(0);
+
     }
 }

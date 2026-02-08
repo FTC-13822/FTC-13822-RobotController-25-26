@@ -9,8 +9,7 @@ public class left extends OpMode {
     public DcMotor FRM;
     public DcMotor FLM;
     public DcMotor BRM;
-    public DcMotor ShooterPrecision;
-    public DcMotor ShooterPower;
+
     public left(HardwareMap hardwareMap) {
         BRM = hardwareMap.get(DcMotor.class, ("BRM"));
         FRM = hardwareMap.get(DcMotor.class, ("FRM"));

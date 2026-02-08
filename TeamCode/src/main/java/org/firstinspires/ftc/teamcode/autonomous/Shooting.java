@@ -6,20 +6,13 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 
 public class Shooting extends OpMode {
-    public DcMotor BLM;
-    public DcMotor FRM;
-    public DcMotor FLM;
-    public DcMotor BRM;
+
     public DcMotor ShooterPrecision;
     public DcMotor ShooterPower;
     public ElapsedTime runTime;
 
     public Shooting(HardwareMap hardwareMap) {
-        BRM = hardwareMap.get(DcMotor.class, ("BRM"));
-        FRM = hardwareMap.get(DcMotor.class, ("FRM"));
-        BLM = hardwareMap.get(DcMotor.class, ("BLM"));
-        FLM = hardwareMap.get(DcMotor.class, ("FLM"));
-        //initialize both motors
+
         ShooterPrecision = hardwareMap.get(DcMotor.class, ("Shooter1"));
         ShooterPower = hardwareMap.get(DcMotor.class, ("Shooter2"));
         runTime = new ElapsedTime();

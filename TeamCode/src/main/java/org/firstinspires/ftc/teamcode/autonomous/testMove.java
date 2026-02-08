@@ -30,8 +30,8 @@ public class testMove extends OpMode {
          forward = new Forward(hardwareMap);
          moveLeft = new left(hardwareMap);
          moveRight = new  right(hardwareMap);
-         //shot = new Shooting(hardwareMap);
-         //intake = new Intake(hardwareMap);
+         shot = new Shooting(hardwareMap);
+         intake = new Intake(hardwareMap);
          back = new Back(hardwareMap);
     }
 
